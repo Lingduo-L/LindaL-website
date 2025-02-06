@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+  <head>
+    <!-- 包含通用的头部配置 --><head>
   
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSRPBP7J30"></script>
@@ -34,16 +36,11 @@
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="LindaL&apos;s World" /><link rel="shortcut icon" type="image/x-icon" href="/logo.png" />
   <link rel="stylesheet" href="/assets/css/main.css" />
-</head><link rel="stylesheet" href="/assets/css/style.css">
-
-
+</head><!-- 加载自定义样式 -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
   <body a="auto">
-
-    <!-- add a LDL logo -->
-    <!-- <div class="logo-right-top">
-      <img src="/logo.png" alt="Your Logo">
-    </div> -->
-
+    <!-- 主内容部分 -->
     <main class="page-content" aria-label="Content">
       <div class="w">
         <a href="/">Back to Home</a><article>
@@ -172,33 +169,22 @@ console.log(ultimateTruth);
 
 </article>
       </div>
-    </main><!-- GPT Chatbox Container
-  <div id="gpt-chatbox">
-    <input type="text" id="user-input" placeholder="Ask me anything...">
-    <button onclick="getGPTResponse()">Send</button>
-    <div id="gpt-response"></div>
-  </div> -->
+    </main>
 
-    
+    <!-- 如果配置了 goat_counter，并且处于生产环境，加载统计代码 --><!-- Chatbot UI -->
+    <div id="chat-container">
+      <!-- 对话内容 -->
+      <div id="chatbox">
+        <div id="messages"></div>
+      </div>
+      <!-- 用户输入区域 -->
+      <div id="input-container">
+        <input type="text" id="userInput" placeholder="Questions to my AI chatbot:" />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
 
-    <!-- GPT Chatbox Script
-  <script type="text/javascript">
-    // JavaScript code to handle the chat interaction
-    // and call the OpenAI API
-  </script> -->
-
-<!-- Chatbot UI -->
-<div id="chat-container">
-  <div id="chatbox">
-      <div id="messages"></div>
-  </div>
-  <div id="input-container">
-      <input type="text" id="userInput" placeholder="Questions to my AI chatbot:" />
-      <button onclick="sendMessage()">Send</button>
-  </div>
-</div>
-
-<script src="/assets/js/chat.js"></script>
-
+    <!-- 加载 JavaScript -->
+    <script src="/assets/js/chat.js"></script>
   </body>
 </html>

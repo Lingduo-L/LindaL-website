@@ -1,58 +1,38 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}">
-  {%- include head.html -%}
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-
-
+  <head>
+    <!-- 包含通用的头部配置 -->
+    {%- include head.html -%}
+    <!-- 加载自定义样式 -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  </head>
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
-
-    <!-- add a LDL logo -->
-    <!-- <div class="logo-right-top">
-      <img src="/logo.png" alt="Your Logo">
-    </div> -->
-
+    <!-- 主内容部分 -->
     <main class="page-content" aria-label="Content">
       <div class="w">
         {{ content }}
       </div>
     </main>
 
-    {%-if site.goat_counter and jekyll.environment == "production"-%}
-      {%-include goat_counter.html-%}
-    {%-endif-%}
+    <!-- 如果配置了 goat_counter，并且处于生产环境，加载统计代码 -->
+    {%- if site.goat_counter and jekyll.environment == "production" -%}
+      {%- include goat_counter.html -%}
+    {%- endif -%}
 
+    <!-- Chatbot UI -->
+    <div id="chat-container">
+      <!-- 对话内容 -->
+      <div id="chatbox">
+        <div id="messages"></div>
+      </div>
+      <!-- 用户输入区域 -->
+      <div id="input-container">
+        <input type="text" id="userInput" placeholder="Questions to my AI chatbot:" />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
 
-    <!-- GPT Chatbox Container
-  <div id="gpt-chatbox">
-    <input type="text" id="user-input" placeholder="Ask me anything...">
-    <button onclick="getGPTResponse()">Send</button>
-    <div id="gpt-response"></div>
-  </div> -->
-
-    {% if page.custom_js %}
-      {% for js_file in page.custom_js %}
-        <script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
-      {% endfor %}
-    {% endif %}
-
-    <!-- GPT Chatbox Script
-  <script type="text/javascript">
-    // JavaScript code to handle the chat interaction
-    // and call the OpenAI API
-  </script> -->
-
-<!-- Chatbot UI -->
-<div id="chat-container">
-  <div id="chatbox">
-      <div id="messages"></div>
-  </div>
-  <div id="input-container">
-      <input type="text" id="userInput" placeholder="Questions to my AI chatbot:" />
-      <button onclick="sendMessage()">Send</button>
-  </div>
-</div>
-
-<script src="{{ '/assets/js/chat.js' | relative_url }}"></script>
-
+    <!-- 加载 JavaScript -->
+    <script src="{{ '/assets/js/chat.js' | relative_url }}"></script>
   </body>
 </html>
