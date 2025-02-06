@@ -5,7 +5,7 @@ layout: home
 <!-- [Play Blackhole Game](/blackholegame.html) -->
 
 <!-- Play Game 按钮 -->
-<button id="playGameButton">Play Game</button>
+<!-- <button id="playGameButton">Game (开发中)</button> -->
 
 <!-- 游戏的 iframe，初始时设置为隐藏 -->
 <iframe id="gameIframe" src="/blackholegame.html" frameborder="0" style="display:none; position:fixed; top:15%; left:15%; width:70%; height:70%;"></iframe>

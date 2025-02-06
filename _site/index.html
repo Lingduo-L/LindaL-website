@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XSRPBP7J30"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XSRPBP7J30');
+</script>
+
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>LindaL's World</title><!-- Begin Jekyll SEO tag v2.7.1 -->
-<meta name="generator" content="Jekyll v3.9.3" />
+  <title>LindaL's World</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="LindaL’s World" />
 <meta name="author" content="Linda L" />
 <meta property="og:locale" content="en_US" />
@@ -14,29 +25,28 @@
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
 <meta property="og:site_name" content="LindaL’s World" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="LindaL’s World" />
 <script type="application/ld+json">
-{"name":"LindaL’s World","url":"http://localhost:4000/","description":"Welcome to LindaL’s World, a space to share my experiences, adventures and thoughts.","@type":"WebSite","author":{"@type":"Person","name":"Linda L"},"headline":"LindaL’s World","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Linda L"},"description":"Welcome to LindaL’s World, a space to share my experiences, adventures and thoughts.","headline":"LindaL’s World","name":"LindaL’s World","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="LindaL&apos;s World" /><link rel="shortcut icon" type="image/x-icon" href="/logo.png" />
   <link rel="stylesheet" href="/assets/css/main.css" />
-</head><body a="auto">
+</head><link rel="stylesheet" href="/assets/css/style.css">
+
+  <body a="auto">
 
     <!-- add a LDL logo -->
-    <div class="logo-right-top">
+    <!-- <div class="logo-right-top">
       <img src="/logo.png" alt="Your Logo">
-    </div>
+    </div> -->
 
     <main class="page-content" aria-label="Content">
       <div class="w">
         <header>
   <h1>LindaL's World</h1><p>Welcome to LindaL's World, a space to share my experiences, adventures and thoughts.
-</p></header><ul><li>About Linda L 👩🏻</li><ul><li>A graduate from USC with a focus on GIS/Spatial Data Science. A basketball🏀 enthusiast and a nature🌏 lover.</li><li>Contact Me ✉️</li><li><a href="https://github.com/Lingduo-L">My Github💻</a></li><li><a href="https://www.linkedin.com/in/lingduo">My LinkedIn🖥</a></li><li><a href="/files/Resume_LindaL.pdf">My Resume🖨</a></li><li><a href="https://www.instagram.com/lluuuoooo/?igshid=YTQwZjQ0NmI0OA%3D%3D">My Instagram📱</a></li></ul><li>L's Academia/Work 📝</li><ul><li>
-          <!-- <span>2023-09-12</span> -->
-          <span>2023-09-12</span>
-          <a href="/my-experience.html">my experiences</a>
-        </li><li>
+</p></header><ul><li>About Linda L 👩🏻</li><ul><li>A graduate from USC with a focus on GIS/Spatial Data Science. A basketball🏀 enthusiast and a nature🌏 lover.</li><li>Contact Me ✉️</li><li><a href="https://github.com/Lingduo-L">My Github💻</a></li><li><a href="https://www.linkedin.com/in/lingduo">My LinkedIn🖥</a></li><li><a href="/files/Resume_LindaL.pdf">My Resume🖨</a></li></ul><li>L's Academia/Work 📝</li><ul><li>
           <!-- <span>2023-05-10</span> -->
           <span>2023-05-10</span>
           <a href="/travler-planner.html">route planner web project</a>
@@ -52,14 +62,14 @@
           <!-- <span>2020-07-08</span> -->
           <span>2020-07-08</span>
           <a href="/language-tests.html">language tests</a>
-        </li><li><a href="archive.html">More ...</a></li></ul><li>L's Life 🗺</li><ul><li>
-          <!-- <span>2020-07-08</span> -->
-          <span>2020-07-08</span>
-          <a href="/language-tests.html">language tests</a>
-        </li></ul><li><a href="feed.xml">L's Hobbies and Interests 🏕</a></li><li>Resources 📚</li><ul><li>with subitems</li><ul><li>with subsubitems</li><li><a href="about">example page</a></li></ul></ul></ul><!-- [Play Blackhole Game](/blackholegame.html) -->
+        </li><li>
+          <!-- <span>2020-07-07</span> -->
+          <span>2020-07-07</span>
+          <a href="/overview-post.html">overview post</a>
+        </li><li><a href="archive.html">More ...</a></li></ul></ul><!-- [Play Blackhole Game](/blackholegame.html) -->
 
 <!-- Play Game 按钮 -->
-<p><button id="playGameButton">Play Game</button></p>
+<!-- <button id="playGameButton">Game (开发中)</button> -->
 
 <!-- 游戏的 iframe，初始时设置为隐藏 -->
 <iframe id="gameIframe" src="/blackholegame.html" frameborder="0" style="display:none; position:fixed; top:15%; left:15%; width:70%; height:70%;"></iframe>
@@ -82,6 +92,33 @@
 
 
       </div>
-    </main>
+    </main><!-- GPT Chatbox Container
+  <div id="gpt-chatbox">
+    <input type="text" id="user-input" placeholder="Ask me anything...">
+    <button onclick="getGPTResponse()">Send</button>
+    <div id="gpt-response"></div>
+  </div> -->
+
+    
+
+    <!-- GPT Chatbox Script
+  <script type="text/javascript">
+    // JavaScript code to handle the chat interaction
+    // and call the OpenAI API
+  </script> -->
+
+<!-- Chatbot UI -->
+<div id="chat-container">
+  <div id="chatbox">
+      <div id="messages"></div>
+  </div>
+  <div id="input-container">
+      <input type="text" id="userInput" placeholder="Questions to my AI chatbot:" />
+      <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script src="/assets/js/chat.js"></script>
+
   </body>
 </html>

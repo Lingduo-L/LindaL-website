@@ -1,52 +1,79 @@
 /* Chatbot 样式 */
-/* 聊天窗口容器 */
 #chat-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 350px;
-    background-color: #f9f9f9; /* 淡灰色背景 */
-    border: 2px solid #007bff; /* 蓝色边框 */
-    border-radius: 10px; /* 圆角 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
-    font-family: serif, sans-serif; /* 使用无衬线字体 */
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.02); /* 背景为 30% 透明黑色 */
+    color: #333;           /* 文字设置为深灰色 */
+    border: 1px solid #000; /* 边框为黑色 */
+    border-radius: 8px;     /* 圆角更柔和 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* 添加柔和阴影 */
+
+    font-family: monospace; /* 设置字体为 monospace，与博客一致 */
+    font-size: 16px;        /* 设置字体大小为 16px */
+    line-height: 1;       /* 行高设置为 1.4，与博客一致 */
+    color: #333;            /* 文字颜色可保持深灰色 */
+
+    overflow: hidden;       /* 防止子元素超出容器 */
+    display: flex;
+    flex-direction: column; /* 纵向布局 */
+
+    font-size: 12px;
 }
 
-/* 聊天框 */
 #chatbox {
     padding: 10px;
+    flex-grow: 1; /* 确保消息区域占据剩余空间 */
 }
 
-/* 消息列表 */
 #messages {
     height: 200px;
     overflow-y: auto;
-    padding: 10px;
-    border-bottom: 1px solid #ccc; /* 底部分隔线 */
+    border-bottom: 1px solid #000; /* 分割线设置为黑色 */
+    padding: 5px;
+    color: #333; /* 消息文字设置为深灰色 */
 }
 
-/* 输入框 */
 #userInput {
-    width: 80%;
+    flex-grow: 1; /* 输入框自动填满剩余宽度 */
     padding: 8px;
-    border: 1px solid #ccc; /* 灰色边框 */
-    border-radius: 5px; /* 圆角 */
-    outline: none;
+    margin: 5px; /* 四周的间隙相等 */
+    background-color: rgba(255, 255, 255, 0.8); /* 输入框背景为白色，80%透明 */
+    color: #333;            /* 输入框文字为深灰色 */
+    border: 1px solid #000; /* 输入框边框为黑色 */
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    font-family: monospace; /* 与博客统一字体 */
+    font-size: 12px;
 }
 
-/* 发送按钮 */
+#input-container {
+    display: flex;
+    padding: 5px; /* 保持输入区域的上下间距 */
+    align-items: center; /* 垂直居中对齐 */
+
+}
+
 button {
-    width: 15%;
-    padding: 8px;
+    width: 50px;
+    height: 30px; /* 按钮高度与输入框一致 */
     margin-left: 5px;
-    background-color: #007bff; /* 蓝色背景 */
-    color: white;
-    border: none;
-    border-radius: 5px; /* 圆角 */
+    background-color: #000; /* 按钮背景为黑色 */
+    color: #fff;            /* 按钮文字为白色 */
+    border: 1px solid #000; /* 按钮边框为黑色 */
+    border-radius: 5px;
     cursor: pointer;
+    text-transform: uppercase; /* 按钮文字全大写 */
     font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: monospace; /* 与博客统一字体 */
+
+    font-size: 12px;
 }
 
 button:hover {
-    background-color: #0056b3; /* 悬停变深蓝色 */
+    background-color: #444; /* 按钮悬停时背景为深灰色 */
+    transform: scale(1.05); /* 悬停时按钮稍微放大 */
 }

@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XSRPBP7J30"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XSRPBP7J30');
+</script>
+
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Route Planner Web Project</title><!-- Begin Jekyll SEO tag v2.7.1 -->
-<meta name="generator" content="Jekyll v3.9.3" />
+  <title>Route Planner Web Project</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="Route Planner Web Project" />
 <meta name="author" content="Linda L" />
 <meta property="og:locale" content="en_US" />
@@ -19,16 +30,18 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Route Planner Web Project" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/travler-planner.html","description":"National Parks &amp; Areas Travel Planner Web Application Website: Click here Github: Click here Duration: February 2023 - Now","@type":"BlogPosting","author":{"@type":"Person","name":"Linda L"},"headline":"Route Planner Web Project","dateModified":"2023-05-10T00:00:00-07:00","datePublished":"2023-05-10T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/travler-planner.html"},"@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Linda L"},"dateModified":"2023-05-10T00:00:00-07:00","datePublished":"2023-05-10T00:00:00-07:00","description":"National Parks &amp; Areas Travel Planner Web Application Website: Click here Github: Click here Duration: February 2023 - Now","headline":"Route Planner Web Project","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/travler-planner.html"},"url":"http://localhost:4000/travler-planner.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="LindaL&apos;s World" /><link rel="shortcut icon" type="image/x-icon" href="/logo.png" />
   <link rel="stylesheet" href="/assets/css/main.css" />
-</head><body a="auto">
+</head><link rel="stylesheet" href="/assets/css/style.css">
+
+  <body a="auto">
 
     <!-- add a LDL logo -->
-    <div class="logo-right-top">
+    <!-- <div class="logo-right-top">
       <img src="/logo.png" alt="Your Logo">
-    </div>
+    </div> -->
 
     <main class="page-content" aria-label="Content">
       <div class="w">
@@ -75,6 +88,33 @@
 
 </article>
       </div>
-    </main>
+    </main><!-- GPT Chatbox Container
+  <div id="gpt-chatbox">
+    <input type="text" id="user-input" placeholder="Ask me anything...">
+    <button onclick="getGPTResponse()">Send</button>
+    <div id="gpt-response"></div>
+  </div> -->
+
+    
+
+    <!-- GPT Chatbox Script
+  <script type="text/javascript">
+    // JavaScript code to handle the chat interaction
+    // and call the OpenAI API
+  </script> -->
+
+<!-- Chatbot UI -->
+<div id="chat-container">
+  <div id="chatbox">
+      <div id="messages"></div>
+  </div>
+  <div id="input-container">
+      <input type="text" id="userInput" placeholder="Questions to my AI chatbot:" />
+      <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script src="/assets/js/chat.js"></script>
+
   </body>
 </html>

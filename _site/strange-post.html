@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XSRPBP7J30"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XSRPBP7J30');
+</script>
+
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Strange Post</title><!-- Begin Jekyll SEO tag v2.7.1 -->
-<meta name="generator" content="Jekyll v3.9.3" />
+  <title>Strange Post</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="Strange Post" />
 <meta name="author" content="Linda L" />
 <meta property="og:locale" content="en_US" />
@@ -19,16 +30,18 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Strange Post" />
 <script type="application/ld+json">
-{"url":"http://localhost:4000/strange-post.html","description":"This post is strange. It also has some custom js.","@type":"BlogPosting","author":{"@type":"Person","name":"Linda L"},"headline":"Strange Post","dateModified":"2020-07-06T00:00:00-07:00","datePublished":"2020-07-06T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/strange-post.html"},"@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Linda L"},"dateModified":"2020-07-06T00:00:00-07:00","datePublished":"2020-07-06T00:00:00-07:00","description":"This post is strange. It also has some custom js.","headline":"Strange Post","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/strange-post.html"},"url":"http://localhost:4000/strange-post.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="LindaL&apos;s World" /><link rel="shortcut icon" type="image/x-icon" href="/logo.png" />
   <link rel="stylesheet" href="/assets/css/main.css" />
-</head><body a="auto">
+</head><link rel="stylesheet" href="/assets/css/style.css">
+
+  <body a="auto">
 
     <!-- add a LDL logo -->
-    <div class="logo-right-top">
+    <!-- <div class="logo-right-top">
       <img src="/logo.png" alt="Your Logo">
-    </div>
+    </div> -->
 
     <main class="page-content" aria-label="Content">
       <div class="w">
@@ -44,10 +57,37 @@
 
 </article>
       </div>
-    </main>
+    </main><!-- GPT Chatbox Container
+  <div id="gpt-chatbox">
+    <input type="text" id="user-input" placeholder="Ask me anything...">
+    <button onclick="getGPTResponse()">Send</button>
+    <div id="gpt-response"></div>
+  </div> -->
+
+    
       
         <script type="text/javascript" src="/assets/js/mouse_coords.js"></script>
       
     
+
+    <!-- GPT Chatbox Script
+  <script type="text/javascript">
+    // JavaScript code to handle the chat interaction
+    // and call the OpenAI API
+  </script> -->
+
+<!-- Chatbot UI -->
+<div id="chat-container">
+  <div id="chatbox">
+      <div id="messages"></div>
+  </div>
+  <div id="input-container">
+      <input type="text" id="userInput" placeholder="Questions to my AI chatbot:" />
+      <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script src="/assets/js/chat.js"></script>
+
   </body>
 </html>
