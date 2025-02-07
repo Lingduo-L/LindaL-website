@@ -1,4 +1,4 @@
-name: Deploy GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,27 +6,32 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
+      # Step 2: Install dependencies (if needed, for example Jekyll)
+      - name: Install dependencies
+        run: |
+          bundle install
 
-    - name: Install dependencies
-      run: npm install
+      # Step 3: Inject API Key
+      - name: Replace API Key
+        run: |
+          sed -i "s/{{APIKEY}}/${{ secrets.APIKEY }}/g" assets/js/chat.js
 
-    - name: Replace API Key
-      run: |
-        sed -i 's/{{APIKEY}}/'"$APIKEY"'/g' assets/js/chat.js
+      # Step 4: Build the project (if needed)
+      - name: Build project
+        run: |
+          bundle exec jekyll build
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+      # Step 5: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
