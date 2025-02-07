@@ -30,12 +30,16 @@ jobs:
         run: |
           cat assets/js/chat.js
 
-      # Step 5: Build the project
+      # Step 5: Print chat.js for verification
+      - name: Verify chat.js
+        run: cat assets/js/chat.js
+
+      # Step 6: Build the project
       - name: Build project
         run: |
           bundle exec jekyll build
 
-      # Step 6: Deploy to GitHub Pages
+      # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
