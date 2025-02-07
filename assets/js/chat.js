@@ -45,32 +45,48 @@
 
 
 ////  OPEN AI ////
-require('dotenv').config();
-const API_KEY = process.env.API_KEY;
+// 确保在 HTML 元素加载后绑定事件
+window.onload = () => {
+    document.getElementById("sendButton").addEventListener("click", sendMessage);
+};
+
+// 定义 API_KEY
+const API_KEY = "{{API_KEY}}"; // 由 GitHub Actions 替换
 
 async function sendMessage() {
+    const userMessage = document.getElementById("userInput").value.trim();
+    if (!userMessage) return; // 空消息不发送
+
+    const messagesDiv = document.getElementById("messages");
+    messagesDiv.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+    document.getElementById("userInput").value = ""; // 清空输入框
+
     try {
-        let response = await fetch("https://api.openai.com/v1/chat/completions", {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${API_KEY}`
+                "Authorization": `Bearer ${API_KEY}`,
             },
             body: JSON.stringify({
                 model: "gpt-3.5-turbo",
-                messages: [{ role: "user", content: "Hello!" }],
+                messages: [{ role: "user", content: userMessage }],
                 max_tokens: 50,
-                temperature: 0.7
-            })
+                temperature: 0.7,
+            }),
         });
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        let data = await response.json();
-        console.log("Response:", data);
+        const data = await response.json();
+        const botReply = data.choices[0].message.content;
+
+        messagesDiv.innerHTML += `<p><strong>AI Bot:</strong> ${botReply}</p>`;
+        messagesDiv.scrollTop = messagesDiv.scrollHeight; // 滚动到底部
     } catch (error) {
         console.error("Error:", error);
+        messagesDiv.innerHTML += `<p style="color:red;"><strong>Error:</strong> ${error.message}</p>`;
     }
 }
