@@ -14,31 +14,31 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Install dependencies
+      # Step 2: Set up environment
+      - name: Setup Node.js (for managing .env file if needed)
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: |
           gem install bundler
           bundle install
 
-      # Step 3: Inject API Key
-      - name: Replace API Key
+      # Step 4: Inject API Key
+      - name: Inject API Key
         run: |
-          sed -i "s|{{APIKEY}}|${{ secrets.APIKEY }}|g" assets/js/chat.js
+          echo "API_KEY=${{ secrets.APIKEY }}" > .env
 
-      # Step 4: Verify API Key replacement
-      - name: Verify API Key replacement
-        run: |
-          cat assets/js/chat.js
+      # Step 5: Verify API Key presence (Optional for Debugging)
+      - name: Verify API Key in .env
+        run: cat .env
 
-      # Step 5: Build the project
+      # Step 6: Build the project
       - name: Build project
         run: |
           bundle exec jekyll build
-
-      # Step 6: List built files (optional for debugging)
-      - name: List built files
-        run: |
-          ls -R ./_site
 
       # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages

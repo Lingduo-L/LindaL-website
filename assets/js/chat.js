@@ -45,29 +45,22 @@
 
 
 ////  OPEN AI ////
+require('dotenv').config();
+const API_KEY = process.env.API_KEY;
+
 async function sendMessage() {
-    const apiKey = "{{APIKEY}}"; // 占位符，将通过 GitHub Actions 替换为实际的 API Key
-    
-    let userMessage = document.getElementById("userInput").value;
-    if (!userMessage.trim()) return; // 防止空消息发送
-
-    let messagesDiv = document.getElementById("messages");
-    messagesDiv.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
-
-    document.getElementById("userInput").value = ""; // 清空输入框
-
     try {
         let response = await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${apiKey}` // 使用替换后的 API Key
+                "Authorization": `Bearer ${API_KEY}`
             },
             body: JSON.stringify({
-                model: "gpt-3.5-turbo", // 指定模型
-                messages: [{ role: "user", content: userMessage }],
-                max_tokens: 50, // 限制生成的最大 token 数
-                temperature: 0.7 // 控制生成的随机性
+                model: "gpt-3.5-turbo",
+                messages: [{ role: "user", content: "Hello!" }],
+                max_tokens: 50,
+                temperature: 0.7
             })
         });
 
@@ -76,12 +69,8 @@ async function sendMessage() {
         }
 
         let data = await response.json();
-        let botReply = data.choices[0].message.content;
-
-        messagesDiv.innerHTML += `<p><strong>AI Bot:</strong> ${botReply}</p>`;
-        messagesDiv.scrollTop = messagesDiv.scrollHeight; // 滚动到底部
+        console.log("Response:", data);
     } catch (error) {
         console.error("Error:", error);
-        messagesDiv.innerHTML += `<p style="color:red;"><strong>Error:</strong> ${error.message}</p>`;
     }
 }
