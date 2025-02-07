@@ -46,6 +46,8 @@
 
 ////  OPEN AI ////
 async function sendMessage() {
+    const apiKey = "{{APIKEY}}"; // 占位符，将通过 GitHub Actions 替换为实际的 API Key
+
     let userMessage = document.getElementById("userInput").value;
     if (!userMessage.trim()) return; // 防止空消息发送
 
@@ -59,10 +61,10 @@ async function sendMessage() {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer {{APIKEY}}` // 占位符
+                "Authorization": `Bearer ${apiKey}` // 使用替换后的 API Key
             },
             body: JSON.stringify({
-                model: "gpt-3.5-turbo", // 指定模型，如 gpt-4 或 gpt-3.5-turbo
+                model: "gpt-3.5-turbo", // 指定模型
                 messages: [{ role: "user", content: userMessage }],
                 max_tokens: 50, // 限制生成的最大 token 数
                 temperature: 0.7 // 控制生成的随机性
