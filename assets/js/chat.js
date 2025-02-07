@@ -47,7 +47,7 @@
 ////  OPEN AI ////
 async function sendMessage() {
     const apiKey = "{{APIKEY}}"; // 占位符，将通过 GitHub Actions 替换为实际的 API Key
-
+    
     let userMessage = document.getElementById("userInput").value;
     if (!userMessage.trim()) return; // 防止空消息发送
 
