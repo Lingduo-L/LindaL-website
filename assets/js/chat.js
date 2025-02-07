@@ -51,7 +51,7 @@ window.onload = () => {
 };
 
 // 定义 API_KEY
-const API_KEY = "{{API_KEY}}"; // 由 GitHub Actions 替换
+const API_KEY = "{{APIKEY}}"; // 由 GitHub Actions 替换
 
 async function sendMessage() {
     const userMessage = document.getElementById("userInput").value.trim();
