@@ -1,0 +1,79 @@
+/* Chatbot 样式 */
+#chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.02); /* 背景为 30% 透明黑色 */
+    color: #333;           /* 文字设置为深灰色 */
+    border: 1px solid #000; /* 边框为黑色 */
+    border-radius: 8px;     /* 圆角更柔和 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* 添加柔和阴影 */
+
+    font-family: monospace; /* 设置字体为 monospace，与博客一致 */
+    font-size: 16px;        /* 设置字体大小为 16px */
+    line-height: 1;       /* 行高设置为 1.4，与博客一致 */
+    color: #333;            /* 文字颜色可保持深灰色 */
+
+    overflow: hidden;       /* 防止子元素超出容器 */
+    display: flex;
+    flex-direction: column; /* 纵向布局 */
+
+    font-size: 12px;
+}
+
+#chatbox {
+    padding: 10px;
+    flex-grow: 1; /* 确保消息区域占据剩余空间 */
+}
+
+#messages {
+    height: 200px;
+    overflow-y: auto;
+    border-bottom: 1px solid #000; /* 分割线设置为黑色 */
+    padding: 5px;
+    color: #333; /* 消息文字设置为深灰色 */
+}
+
+#userInput {
+    flex-grow: 1; /* 输入框自动填满剩余宽度 */
+    padding: 8px;
+    margin: 5px; /* 四周的间隙相等 */
+    background-color: rgba(255, 255, 255, 0.8); /* 输入框背景为白色，80%透明 */
+    color: #333;            /* 输入框文字为深灰色 */
+    border: 1px solid #000; /* 输入框边框为黑色 */
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    font-family: monospace; /* 与博客统一字体 */
+    font-size: 12px;
+}
+
+#input-container {
+    display: flex;
+    padding: 5px; /* 保持输入区域的上下间距 */
+    align-items: center; /* 垂直居中对齐 */
+
+}
+
+button {
+    width: 50px;
+    height: 30px; /* 按钮高度与输入框一致 */
+    margin-left: 5px;
+    background-color: #000; /* 按钮背景为黑色 */
+    color: #fff;            /* 按钮文字为白色 */
+    border: 1px solid #000; /* 按钮边框为黑色 */
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase; /* 按钮文字全大写 */
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: monospace; /* 与博客统一字体 */
+
+    font-size: 12px;
+}
+
+button:hover {
+    background-color: #444; /* 按钮悬停时背景为深灰色 */
+    transform: scale(1.05); /* 悬停时按钮稍微放大 */
+}

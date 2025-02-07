@@ -1,0 +1,121 @@
+
+@import "chat";
+
+// -------------- THEME SWITCHER -------------- //
+@mixin dark-appearance {
+  filter: invert(1);
+  img {
+    filter: invert(1);
+
+    &.ioda { filter: invert(0); }
+  }
+}
+
+body[a="dark"] { @include dark-appearance; }
+
+
+@media (prefers-color-scheme: dark) {
+  body[a="auto"] { @include dark-appearance; }
+}
+// -------------------------------------------- //
+
+// bg color is also needed in html in order to
+// block body's background propagation
+// see: https://stackoverflow.com/a/61265706
+html, body { background: white; }
+
+html { height: 100%; }
+
+body {
+  color: black;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  min-height: 100%;
+  overflow-wrap: break-word;
+}
+
+.post-meta { text-align: right; }
+
+h2, h3, h4, h5, h6 { margin-top: 3rem; }
+
+hr { margin: 2rem 0; }
+
+p { margin: 1rem 0; }
+
+li { margin: 0.4rem 0; }
+
+*:target { background: yellow; }
+
+.w {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+hr {
+  text-align: center;
+  border: 0;
+
+  &:before { content: '/////' }
+  &:after { content: attr(data-content) '/////' }
+}
+
+table { width: 100%; }
+
+table, th, td {
+  border: thin solid black;
+  border-collapse: collapse;
+  padding: 0.4rem;
+}
+
+code {
+  color: white;
+  background: black;
+}
+
+div.highlighter-rouge code {
+  display: block;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  padding: 1rem;
+}
+
+blockquote {
+  font-style: italic;
+  border: thin solid black;
+  padding: 1rem;
+
+  p { margin: 0; }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+// .logo-right-top {
+//   width: 100px;  /* 或者用百分比，例如 width: 10%; */
+//   height: auto;  /* 设置为 auto 以保持宽高比 */
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+// }
+
+//  尝试窗口滚动图片
+// .parallax {
+//   /* 使用你自己的图片路径 */
+//   background-image: url('./pics/trp.png');
+//   width: 100vw;
+//   // `/assets/css/pics/trp.png'
+//   min-height: 800px;  /* 设置为图片的实际高度 */
+//   min-width: 200px;  /* 设置为图片的实际宽度 */
+//   background-attachment: fixed;
+//   background-position: center;  /* 居中图片 */
+//   background-repeat: no-repeat;  /* 不重复图片 */
+//   background-size: cover;  /* 图片尽量大并覆盖整个元素 */
+// }
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Escape the Black Hole</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let spaceship = { x: 200, y: 600, speed: 5 };
+        let blackholeX = 300; // 定义黑洞的 x 坐标
+        let blackholeY = 300; // 定义黑洞的 y 坐标
+
+        // 加载图像
+        const background = new Image();
+        background.src = 'imgs/background.png'; 
+
+        const blackhole = new Image();
+        blackhole.src = 'imgs/blackhole.png';
+
+        const spaceshipImg = new Image();
+        spaceshipImg.src = 'imgs/spaceship.png'; 
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp') spaceship.y -= spaceship.speed;
+            if (e.key === 'ArrowDown') spaceship.y += spaceship.speed;
+            if (e.key === 'ArrowLeft') spaceship.x -= spaceship.speed;
+            if (e.key === 'ArrowRight') spaceship.x += spaceship.speed;
+        });
+
+        function gameLoop() {
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw images
+            ctx.drawImage(background, 0, 0);
+            ctx.drawImage(blackhole, blackholeX, blackholeY);
+            ctx.drawImage(spaceshipImg, spaceship.x, spaceship.y);
+
+            // Update game state
+            // ...
+
+            // Continue the game loop
+            requestAnimationFrame(gameLoop);
+        }
+
+        gameLoop();
+    </script>
+</body>
+</html>

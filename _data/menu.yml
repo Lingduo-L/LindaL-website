@@ -1,0 +1,48 @@
+# For documentation on this file, see:
+# https://github.com/riggraz/no-style-please#customize-the-menu
+
+entries:
+  - title: About Linda L 👩🏻
+    entries:
+      - title: A graduate from USC with a focus on GIS/Spatial Data Science. A basketball🏀 enthusiast and a nature🌏 lover.
+      - title: Contact Me ✉️
+      - title: My Github💻
+        url: https://github.com/Lingduo-L
+      - title: My LinkedIn🖥
+        url: https://www.linkedin.com/in/lingduo
+      - title: My Resume🖨
+        url: "/files/Resume_LindaL.pdf"
+      # - title: My Instagram📱
+      #   url: https://www.instagram.com/lluuuoooo/?igshid=YTQwZjQ0NmI0OA%3D%3D
+
+
+      # - title: "used by <a href='https://riggraz.dev'>riggraz.dev</a> and <a href='https://github.com/riggraz/no-style-please/network/dependents'>many others</a>"
+
+  - title: L's Academia/Work 📝
+    post_list:
+      limit: 5
+      show_more: true
+      show_more_text: More ...
+      show_more_url: archive.html
+
+  # - title: L's Life 🗺
+  #   post_list:
+  #     category: example2
+  #     show_more: true
+  #     show_more_text: See more posts...
+  #     show_more_url: example2-archive.html
+
+  # - title: L's Hobbies and Interests 🏕
+  #   url: feed.xml
+  
+  # - title: Resources 📚
+  #   entries:
+  #     - title: with subitems
+  #       entries:
+  #         - title: with subsubitems
+  #         - title: example page
+  #           url: about
+  
+  # - title: PRO TIP
+  #   entries:
+  #     - title: to edit this menu, edit _data/menu.yml file
