@@ -26,9 +26,14 @@ jobs:
           rm -rf _site assets/js/chat.js
 
       # Step 4: Inject API Key
-      - name: Inject API Key
+      
+      # - name: Inject API Key
+      #   run: |
+      #     sed -i "s|{{APIKEY}}|${{ secrets.APIKEY }}|g" assets/js/chat.js
+
+      - name: Inject Secrets
         run: |
-          sed -i "s|{{APIKEY}}|${{ secrets.APIKEY }}|g" assets/js/chat.js
+          echo "APIKEY=${{ secrets.APIKEY }}" >> _config.yml
 
       # Step 5: Verify API Key replacement (调试用，确保替换生效)
       - name: Verify API Key replacement
